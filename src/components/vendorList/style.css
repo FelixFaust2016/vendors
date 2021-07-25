@@ -1,0 +1,10 @@
+.section_container {
+  position: relative;
+}
+
+.close {
+  width: 10px !important;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

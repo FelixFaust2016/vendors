@@ -1,0 +1,21 @@
+.header_container {
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: #fff;
+  height: 50px;
+}
+
+.header_container div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.header_container p {
+  text-transform: uppercase;
+  color: grey;
+  font-size: 14px;
+}
