@@ -20,7 +20,9 @@ const DropDown = ({ data, onClick, setToggleVendorBar, toggleVendorBar }) => {
           src={"/assets/chevron.svg"}
           alt={""}
         />
-        <p>{data}</p>
+        <p onClick={data === "Funding History" ? handleDropDown : null}>
+          {data}
+        </p>
         <img
           onClick={onClick}
           className="del"
