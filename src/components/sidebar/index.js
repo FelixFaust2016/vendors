@@ -1,6 +1,7 @@
+import { DropDown } from "../../components";
 import "./style.css";
 
-const SideBar = ({ data, handleClick, deleteCriteria }) => {
+const SideBar = ({ data, handleClick, deleteCriteria, setToggleVendorBar, toggleVendorBar }) => {
   return (
     <section className="section_container">
       <div onClick={handleClick} className="add_vendor">
@@ -11,16 +12,13 @@ const SideBar = ({ data, handleClick, deleteCriteria }) => {
         <p>Overall score</p>
       </div>
       {data.map((data, i) => (
-        <div key={i} className="colums">
-          <img src={"/assets/chevron.svg"} alt={""} />
-          <p>{data}</p>
-          <img
-            onClick={() => deleteCriteria(data)}
-            className="del"
-            src={"/assets/del.svg"}
-            alt={""}
-          />
-        </div>
+        <DropDown
+          setToggleVendorBar={setToggleVendorBar}
+          toggleVendorBar={toggleVendorBar}
+          key={i}
+          data={data}
+          onClick={() => deleteCriteria(data)}
+        />
       ))}
     </section>
   );

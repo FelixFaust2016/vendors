@@ -36,13 +36,16 @@ const NewVendor = ({ allCriteria, hide, setVendorList, vendorList }) => {
       { img, name, overallScore, ...vendorCriteria },
     ]);
 
-    hide()
+    hide();
   };
 
   return (
     <Modal hide={hide}>
       <h1>Add New Vendor</h1>
       <form onSubmit={submitForm}>
+        <p style={{ fontSize: "12px", marginTop: "10px" }}>
+          Note: image link should be added to display image.
+        </p>
         <Input
           placeHolder={"Vendor Logo"}
           value={img}
@@ -56,6 +59,10 @@ const NewVendor = ({ allCriteria, hide, setVendorList, vendorList }) => {
           required
         />
         <Input
+          type="number"
+          min="0"
+          max="10"
+          step="0.1"
           value={overallScore}
           placeHolder={"Overall Score"}
           onChange={(e) => setOverallScore(e.target.value)}
